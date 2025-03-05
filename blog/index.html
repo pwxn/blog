@@ -26,9 +26,6 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
-      
       
 
 
@@ -66,14 +63,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -122,18 +112,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -373,6 +351,7 @@
     <div class="md-content__inner">
       <header class="md-typeset">
         <h1 id="blog">Blog</h1>
+<p>Welcome to my blog where I share my thoughts on technology, AI, and more.</p>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -382,6 +361,11 @@
       <ul class="md-meta__list">
         <li class="md-meta__item">
           <time datetime="2025-03-04 00:00:00+00:00">March 4, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/projects/" class="md-meta__link">Projects</a></li>
         
         
           
@@ -397,68 +381,13 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="building-stravatalk-a-natural-language-interface-for-strava-data"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/">Building StravaTalk: A Natural Language Interface for Strava Data</a></h2>
-<p>In the rapidly evolving world of AI agents, finding the right framework can be challenging. After exploring numerous options that often added complexity rather than solving problems, I discovered <a href="https://github.com/atomic-agents/atomic-agents">Atomic Agents</a> - a lightweight, flexible framework that perfectly balances sophistication with simplicity.</p>
-<h3 id="the-challenge"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#the-challenge">The Challenge</a></h3>
-<p>As a running enthusiast, I've accumulated years of workout data in Strava. While the platform offers basic analytics, I wanted the ability to query this treasure trove of information using natural language - asking questions like "What was my longest run last month?" or "Show me my average cycling speed this year" without building complex filters or exports.</p>
-<p>This weekend project is PoC to explore the capabilities of Atomic Agents, but it demonstrates the potential for more sophisticated applications in the future.</p>
-<h3 id="enter-stravatalk"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#enter-stravatalk">Enter StravaTalk</a></h3>
-<p>StravaTalk is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.</p>
-<p><img alt="StravaTalk App" src="../assets/images/StravaTalk.gif" /></p>
-<h3 id="how-it-works"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#how-it-works">How It Works</a></h3>
-<p>The application follows a straightforward workflow:</p>
-<ol>
-<li>
-<p><strong>Data Preparation</strong>: First, I used the Strava API to export my historical workout records to a local SQLite database. This one-time setup provides the foundation for all queries.</p>
-</li>
-<li>
-<p><strong>Query Processing</strong>: When a user enters a natural language question, it flows through a pipeline of specialized AI agents.</p>
-</li>
-</ol>
-<h3 id="the-architecture"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#the-architecture">The Architecture</a></h3>
-<p>The application uses a multi-agent architecture with three specialized AI components built with Atomic Agents:</p>
-<h4 id="1-classification-agent"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#1-classification-agent">1. Classification Agent</a></h4>
-<p>This gatekeeper determines if your query can be answered using available Strava data. It analyzes the question, identifies what data would be required, and classifies it as:
-- SQL-appropriate (can be answered with available data)
-- Not SQL-appropriate (requires data we don't have)
-- Clarification needed (ambiguous query)</p>
-<h4 id="2-sql-agent"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#2-sql-agent">2. SQL Agent</a></h4>
-<p>For questions that can be answered, this agent converts natural language into optimized SQL queries. It understands the database schema (activities, segments, etc.) and builds queries that accurately represent the user's intent.</p>
-<h4 id="3-response-agent"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#3-response-agent">3. Response Agent</a></h4>
-<p>This agent transforms raw database results into human-friendly responses. It formats data with appropriate units (converting meters to kilometers, formatting pace correctly), and presents information in an engaging, motivational way.</p>
-<h4 id="shared-memory"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#shared-memory">Shared Memory</a></h4>
-<p>One of the most powerful features is the shared memory implementation. All agents access the same conversation context, enabling follow-up questions like "How does that compare to last year?" without repeating context.</p>
-<h4 id="structured-outputs"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#structured-outputs">Structured Outputs</a></h4>
-<p>Thanks to Atomic Agents' integration with <a href="https://github.com/jxnl/instructor">Instructor</a>, the entire system works with strongly typed outputs. This dramatically reduces hallucinations and ensures data consistency across the pipeline.</p>
-<h4 id="the-development-experience"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#the-development-experience">The Development Experience</a></h4>
-<p>What impressed me most about building with Atomic Agents was how quickly I could go from concept to working prototype. The framework strikes an excellent balance between:</p>
-<ul>
-<li>Production-ready features (robust error handling, performance optimization)</li>
-<li>Developer experience (clean, readable code)</li>
-<li>Flexibility (easy to customize and extend)</li>
-</ul>
-<p>I completed the initial version in a single weekend, something that would have taken weeks with many other frameworks.</p>
-<h3 id="the-code"><a class="toclink" href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/#the-code">The Code</a></h3>
-<p>The project structure is clean and modular, with separate files for each agent and utility functions. Each agent has clear responsibilities, making the codebase maintainable and extensible.</p>
-<p>The orchestrator ties everything together with a simple pipeline:</p>
-<p>```python
-def process_strava_query(classify_agent, sql_agent, response_agent, user_query):
-    # Step 1: Classify the query
-    classification = classify_query(classify_agent, user_query)</p>
-<pre><code>if classification.classification != "sql_appropriate":
-    # Handle non-SQL queries appropriately
-    return generate_non_sql_response(...)
-
-# Step 2: Convert to SQL with conversation context
-sql_query = convert_to_sql(sql_agent, user_query)
-
-# Step 3: Execute SQL against local SQLite database
-execution_result = run_query(sql_query)
-
-# Step 4: Generate human-friendly response
-response = generate_response(response_agent, user_query, execution_result)
-
-return response
-</code></pre>
+<p>In the rapidly evolving world of AI agents, finding the right framework can be challenging.
+    
+      <nav class="md-post__action">
+        <a href="2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/">
+          Continue reading
+        </a>
+      </nav>
     
   </div>
 </article>
@@ -507,7 +436,7 @@ return response
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
