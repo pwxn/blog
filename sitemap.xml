@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://quantably.co/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-05</lastmod>
+    </url>
+    <url>
+         <loc>https://quantably.co/blog/</loc>
+         <lastmod>2025-03-05</lastmod>
+    </url>
+    <url>
+         <loc>https://quantably.co/blog/2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/</loc>
+         <lastmod>2025-03-05</lastmod>
+    </url>
+    <url>
+         <loc>https://quantably.co/blog/archive/2025/</loc>
+         <lastmod>2025-03-05</lastmod>
     </url>
 </urlset>
