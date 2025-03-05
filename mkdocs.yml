@@ -3,26 +3,23 @@ site_url: https://quantably.co
 repo_url: https://github.com/quantably/blog
 repo_name: quantably/blog
 
-
 plugins:
   - blog:
+      blog_dir: blog
+      post_dir: blog/posts
+      archive: true
+      categories: true
       post_readtime: true
 
 theme:
   name: material
   features:
     - navigation.tabs
-    #- navigation.sections
-  palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
+    - navigation.indexes
 
 nav:
   - Home: index.md
-  - Blog: blog/index.md
+  - Blog: blog/index.md 
   - About: about.md
   
 extra:

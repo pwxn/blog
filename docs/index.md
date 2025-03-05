@@ -1,4 +1,4 @@
-# Welcome to my Blog!
+# Welcome to my Site!
 
 ## Commands
 

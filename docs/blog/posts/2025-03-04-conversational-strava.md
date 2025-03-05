@@ -1,10 +1,17 @@
 ---
 date: 2025-03-04
+tags:
+  - AI
+  - Strava
+  - Python
+categories:
+  - Projects
 ---
 
 # Building StravaTalk: A Natural Language Interface for Strava Data
 
-In the rapidly evolving world of AI agents, finding the right framework can be challenging. After exploring numerous options that often added complexity rather than solving problems, I discovered [Atomic Agents](https://github.com/atomic-agents/atomic-agents) - a lightweight, flexible framework that perfectly balances sophistication with simplicity.
+In the rapidly evolving world of AI agents, finding the right framework can be challenging.<!-- more --> After exploring numerous options that often added complexity rather than solving problems, I discovered [Atomic Agents](https://github.com/BrainBlend-AI/atomic-agents/) - a lightweight, flexible framework that perfectly balances sophistication with simplicity.
+
 
 ## The Challenge
 
@@ -14,7 +21,7 @@ This weekend project is PoC to explore the capabilities of Atomic Agents, but it
 
 ## Enter StravaTalk
 
-StravaTalk is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.
+[StravaTalk](https://github.com/pwxn/StravaTalk) is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.
 
 ![StravaTalk App](../../assets/images/StravaTalk.gif)
 
@@ -88,3 +95,4 @@ def process_strava_query(classify_agent, sql_agent, response_agent, user_query):
     response = generate_response(response_agent, user_query, execution_result)
     
     return response
+```
