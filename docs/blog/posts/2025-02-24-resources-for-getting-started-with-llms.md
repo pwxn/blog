@@ -1,5 +1,6 @@
 ---
 date: 2025-02-24
+draft: true
 ---
 
 # Resources for getting started with LLMs
