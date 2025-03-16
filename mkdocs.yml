@@ -1,4 +1,4 @@
-site_name: "My Personal Site"
+site_name: "Peter Wooldridge"
 site_url: https://quantably.co
 repo_url: https://github.com/quantably/blog
 repo_name: quantably/blog
@@ -19,8 +19,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Blog: blog/index.md 
-  - About: about.md
+  - Blog: blog/index.md
+  - Media: media.md
   
 extra:
   analytics:
