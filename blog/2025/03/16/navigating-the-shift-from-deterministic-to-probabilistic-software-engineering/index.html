@@ -8,11 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://quantably.co/blog/2025/03/04/building-stravatalk-a-natural-language-interface-for-strava-data/">
+        <link rel="canonical" href="https://quantably.co/blog/2025/03/16/navigating-the-shift-from-deterministic-to-probabilistic-software-engineering/">
       
       
+        <link rel="prev" href="../../04/building-stravatalk-a-natural-language-interface-for-strava-data/">
       
-        <link rel="next" href="../../16/navigating-the-shift-from-deterministic-to-probabilistic-software-engineering/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Building StravaTalk: A Natural Language Interface for Strava Data - Peter Wooldridge</title>
+        <title>Navigating the Shift from Deterministic to Probabilistic Software Engineering - Peter Wooldridge</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-stravatalk-a-natural-language-interface-for-strava-data" class="md-skip">
+        <a href="#navigating-the-shift-from-deterministic-to-probabilistic-software-engineering" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building StravaTalk: A Natural Language Interface for Strava Data
+              Navigating the Shift from Deterministic to Probabilistic Software Engineering
             
           </span>
         </div>
@@ -341,105 +341,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-challenge" class="md-nav__link">
+  <a href="#the-deterministic-vs-probabilistic-paradigm" class="md-nav__link">
     <span class="md-ellipsis">
-      The Challenge
+      The Deterministic vs. Probabilistic Paradigm
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enter-stravatalk" class="md-nav__link">
+  <a href="#complexity-and-uncertainty" class="md-nav__link">
     <span class="md-ellipsis">
-      Enter StravaTalk
+      Complexity and Uncertainty
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#the-reality-behind-the-hype" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      The Reality Behind the Hype
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-architecture" class="md-nav__link">
+  <a href="#learning-to-code-is-still-valuable" class="md-nav__link">
     <span class="md-ellipsis">
-      The Architecture
+      Learning to Code Is Still Valuable
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="The Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-classification-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Classification Agent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-sql-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. SQL Agent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-response-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Response Agent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shared Memory
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#structured-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structured Outputs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-development-experience" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Development Experience
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-code" class="md-nav__link">
+  <a href="#finding-the-right-balance" class="md-nav__link">
     <span class="md-ellipsis">
-      The Code
+      Finding the Right Balance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapting-to-the-agentic-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapting to the Agentic Age
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hybrid-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Hybrid Future
     </span>
   </a>
   
@@ -482,20 +440,10 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-03-04 00:00:00+00:00" class="md-ellipsis">March 4, 2025</time>
+                        <time datetime="2025-03-16 00:00:00+00:00" class="md-ellipsis">March 16, 2025</time>
                       </div>
                     </li>
                     
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/projects/">Projects</a></span>
-                        </div>
-                      </li>
                     
                     
                       
@@ -531,69 +479,63 @@
   
 
 
-<h1 id="building-stravatalk-a-natural-language-interface-for-strava-data">Building StravaTalk: A Natural Language Interface for Strava Data</h1>
-<p>In the rapidly evolving world of AI agents, finding the right framework can be challenging.<!-- more --> After exploring numerous options that often added complexity rather than solving problems, I discovered <a href="https://github.com/BrainBlend-AI/atomic-agents/">Atomic Agents</a> - a lightweight, flexible framework that perfectly balances sophistication with simplicity.</p>
-<h2 id="the-challenge">The Challenge</h2>
-<p>As a running enthusiast, I've accumulated years of workout data in Strava. While the platform offers basic analytics, I wanted the ability to query this treasure trove of information using natural language - asking questions like "What was my longest run last month?" or "Show me my average cycling speed this year" without building complex filters or exports.</p>
-<p>This weekend project is PoC to explore the capabilities of Atomic Agents, but it demonstrates the potential for more sophisticated applications in the future.</p>
-<h2 id="enter-stravatalk">Enter StravaTalk</h2>
-<p><a href="https://github.com/pwxn/StravaTalk">StravaTalk</a> is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.</p>
-<p><img alt="StravaTalk App" src="../../../../../assets/images/StravaTalk.gif" /></p>
-<h2 id="how-it-works">How It Works</h2>
-<p>The application follows a straightforward workflow:</p>
+<h1 id="navigating-the-shift-from-deterministic-to-probabilistic-software-engineering">Navigating the Shift from Deterministic to Probabilistic Software Engineering</h1>
+<p>Software engineering is at a crossroads. For decades, the craft has been built on deterministic foundations – where 2+2 always equals 4 and the same inputs reliably produce the same outputs. But as we advance into the era of AI agents, we're witnessing a fundamental shift toward probabilistic thinking that's changing what it means to be a software engineer.</p>
+<!-- more -->
+
+<h2 id="the-deterministic-vs-probabilistic-paradigm">The Deterministic vs. Probabilistic Paradigm</h2>
+<p>Traditional software engineering operates in a binary world: good or bad, pass or fail. When 100% of the tests pass, you can ship your product. It's clean, predictable, and comfortably black and white.</p>
+<p>Probabilistic software, on the other hand, abandons these binary outcomes in favour of statistical efficacy. The questions shift from "Will this work?" to "What's the likelihood of this working?" This reframing is crucial as we build and deploy increasingly autonomous AI systems.</p>
+<p>This isn't entirely new territory – we've had machine learning systems for years. But with the advent of the agentic movement, probabilistic thinking is becoming less of a specialised skill and more of a fundamental requirement.</p>
+<h2 id="complexity-and-uncertainty">Complexity and Uncertainty</h2>
+<p>As agents become more autonomous their non-deterministic aspects introduces unprecedented challenges:</p>
+<ul>
+<li>Increased variability in outputs</li>
+<li>Difficulty in comprehensive testing</li>
+<li>Complex security and consistency requirements</li>
+</ul>
+<p>These challenges demand engineers to develop new mental models for designing, testing, and monitoring AI-based solutions.</p>
+<h2 id="the-reality-behind-the-hype">The Reality Behind the Hype</h2>
+<p>YouTube is filled with lay off your entire team/become a 10x developer simply by combining tools like Cursor with some MCP servers. While these technological advances are impressive, there's still currently a substantial gap between flashy proof-of-concept and a production-ready system.</p>
+<p>Experienced software engineers understand that coding is just one part of the job. In reality a substantial part of the job of a senior engineer falls outside of coding:</p>
+<ul>
+<li>Looking at systems holistically</li>
+<li>Anticipating potential failure points</li>
+<li>Analysing technical debt</li>
+<li>Aligning activities with product roadmaps</li>
+<li>Mentoring other team members</li>
+<li>Understanding how systems behave at scale</li>
+</ul>
+<p>These skills become even more critical when dealing with complex, probabilistic AI systems.</p>
+<h2 id="learning-to-code-is-still-valuable">Learning to Code Is Still Valuable</h2>
+<p>Despite tools that can generate code, understanding how to build systems from the ground up remains essential. Why? Because:</p>
+<ul>
+<li>Not all generated code is correct or useful – you need discernment</li>
+<li>Someone still needs to put these systems into production</li>
+<li>Real-world applications require trade-offs between latency, scale, and reliability</li>
+</ul>
+<p>The value of software engineering isn't diminishing – what's changing however is the additional skillset required.</p>
+<h2 id="finding-the-right-balance">Finding the Right Balance</h2>
+<p>The first question when considering an agent should be: do I actually need one? Not everything requires a probabilistic approach. Sometimes deterministic software is perfectly sufficient – and an "agent" could still be running deterministic software under the hood.</p>
+<h2 id="adapting-to-the-agentic-age">Adapting to the Agentic Age</h2>
+<p>For engineers who have determined they need to build agent-based systems, several approaches can help navigate the non-deterministic behaviour:</p>
 <ol>
 <li>
-<p><strong>Data Preparation</strong>: First, I used the Strava API to export my historical workout records to a local SQLite database. This one-time setup provides the foundation for all queries.</p>
+<p><strong>Embrace Structured Outputs</strong> – The goal isn't to coerce these models to become deterministic – their probabilistic nature is precisely what makes them powerful. Instead, we need to leverage that strength while building reliable systems. Tools like the Instructor library can be a great starting point in creating controllable structured outputs from LLM models. </p>
 </li>
 <li>
-<p><strong>Query Processing</strong>: When a user enters a natural language question, it flows through a pipeline of specialized AI agents.</p>
+<p><strong>Self-Validating Systems</strong> – Increasingly, we'll use AI systems to verify results from other AI components, creating internal validation loops. See <a href="https://huggingface.co/learn/cookbook/llm_judge">LLM-as-a-judge</a> for a practical example of using language models to evaluate other AI outputs.</p>
+</li>
+<li>
+<p><strong>Learn from Existing Systems that Operate Under Uncertainty</strong> – We're not starting from zero. Reinforcement learning and many machine learning techniques already operate under probabilistic uncertainty. We can and should apply these lessons to agent-based systems. Google's <a href="https://storage.googleapis.com/gweb-research2023-media/pubtools/4156.pdf">ML Test Score</a> provides a fantastic checklist to assess production-readiness of ML systems.</p>
+</li>
+<li>
+<p><strong>Focus on the Right Problems and Metrics</strong> – Understand the problem you're solving first, not just input/output results or benchmark scores. Ensure your data and metrics accurately represent real-world conditions. Rather than chasing corner cases, evaluate performance across diverse test distributions to build systems that solve the actual problem, not just optimise for artificial metrics.</p>
 </li>
 </ol>
-<h2 id="the-architecture">The Architecture</h2>
-<p>The application uses a multi-agent architecture with three specialized AI components built with Atomic Agents:</p>
-<h3 id="1-classification-agent">1. Classification Agent</h3>
-<p>This gatekeeper determines if your query can be answered using available Strava data. It analyzes the question, identifies what data would be required, and classifies it as:
-- SQL-appropriate (can be answered with available data)
-- Not SQL-appropriate (requires data we don't have)
-- Clarification needed (ambiguous query)</p>
-<h3 id="2-sql-agent">2. SQL Agent</h3>
-<p>For questions that can be answered, this agent converts natural language into optimized SQL queries. It understands the database schema (activities, segments, etc.) and builds queries that accurately represent the user's intent.</p>
-<h3 id="3-response-agent">3. Response Agent</h3>
-<p>This agent transforms raw database results into human-friendly responses. It formats data with appropriate units (converting meters to kilometers, formatting pace correctly), and presents information in an engaging, motivational way.</p>
-<h3 id="shared-memory">Shared Memory</h3>
-<p>One of the most powerful features is the shared memory implementation. All agents access the same conversation context, enabling follow-up questions like "How does that compare to last year?" without repeating context.</p>
-<h3 id="structured-outputs">Structured Outputs</h3>
-<p>Thanks to Atomic Agents' integration with <a href="https://github.com/jxnl/instructor">Instructor</a>, the entire system works with strongly typed outputs. This dramatically reduces hallucinations and ensures data consistency across the pipeline.</p>
-<h3 id="the-development-experience">The Development Experience</h3>
-<p>What impressed me most about building with Atomic Agents was how quickly I could go from concept to working prototype. The framework strikes an excellent balance between:</p>
-<ul>
-<li>Production-ready features (robust error handling, performance optimization)</li>
-<li>Developer experience (clean, readable code)</li>
-<li>Flexibility (easy to customize and extend)</li>
-</ul>
-<p>I completed the initial version in a single weekend, something that would have taken weeks with many other frameworks.</p>
-<h2 id="the-code">The Code</h2>
-<p>The project structure is clean and modular, with separate files for each agent and utility functions. Each agent has clear responsibilities, making the codebase maintainable and extensible.</p>
-<p>The orchestrator ties everything together with a simple pipeline:</p>
-<pre><code class="language-python">def process_strava_query(classify_agent, sql_agent, response_agent, user_query):
-    # Step 1: Classify the query
-    classification = classify_query(classify_agent, user_query)
-
-    if classification.classification != &quot;sql_appropriate&quot;:
-        # Handle non-SQL queries appropriately
-        return generate_non_sql_response(...)
-
-    # Step 2: Convert to SQL with conversation context
-    sql_query = convert_to_sql(sql_agent, user_query)
-
-    # Step 3: Execute SQL against local SQLite database
-    execution_result = run_query(sql_query)
-
-    # Step 4: Generate human-friendly response
-    response = generate_response(response_agent, user_query, execution_result)
-
-    return response
-</code></pre>
+<h2 id="the-hybrid-future">The Hybrid Future</h2>
+<p>The future isn't probabilistic versus deterministic – it's both. We'll need all the strengths of traditional software development alongside these new approaches to probabilistic systems.</p>
+<p>The complementary nature of these paradigms will produce the most powerful results as we build increasingly autonomous and capable systems. Great software engineers will be those who can navigate both worlds effectively, understanding when to apply each approach and how to combine them seamlessly.</p>
 
 
 
