@@ -186,12 +186,46 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../../../consulting/" class="md-tabs__link">
+        
+  
+    
+  
+  Services
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../../../media/" class="md-tabs__link">
         
   
     
   
   Media
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
 
       </a>
     </li>
@@ -298,11 +332,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../consulting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../media/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Media
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
     
   </span>
   
@@ -405,27 +481,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#shared-memory" class="md-nav__link">
+  <a href="#4-shared-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      Shared Memory
+      4. Shared Memory
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#structured-outputs" class="md-nav__link">
+  <a href="#5-structured-outputs" class="md-nav__link">
     <span class="md-ellipsis">
-      Structured Outputs
+      5. Structured Outputs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-development-experience" class="md-nav__link">
+  <a href="#6-the-development-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      The Development Experience
+      6. The Development Experience
     </span>
   </a>
   
@@ -433,15 +509,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Code
-    </span>
-  </a>
   
 </li>
       
@@ -537,7 +604,7 @@
 <p>As a running enthusiast, I've accumulated years of workout data in Strava. While the platform offers basic analytics, I wanted the ability to query this treasure trove of information using natural language - asking questions like "What was my longest run last month?" or "Show me my average cycling speed this year" without building complex filters or exports.</p>
 <p>This weekend project is PoC to explore the capabilities of Atomic Agents, but it demonstrates the potential for more sophisticated applications in the future.</p>
 <h2 id="enter-stravatalk">Enter StravaTalk</h2>
-<p><a href="https://github.com/pwxn/StravaTalk">StravaTalk</a> is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.</p>
+<p><a href="https://github.com/pwxn/StravaTalk" target="_blank">StravaTalk</a> is a conversational interface that lets me analyse my Strava activities using natural language. Built on the Atomic Agents framework, it transforms English questions into database queries and returns human-friendly responses.</p>
 <p><img alt="StravaTalk App" src="../../../../../assets/images/StravaTalk.gif" /></p>
 <h2 id="how-it-works">How It Works</h2>
 <p>The application follows a straightforward workflow:</p>
@@ -560,11 +627,11 @@
 <p>For questions that can be answered, this agent converts natural language into optimized SQL queries. It understands the database schema (activities, segments, etc.) and builds queries that accurately represent the user's intent.</p>
 <h3 id="3-response-agent">3. Response Agent</h3>
 <p>This agent transforms raw database results into human-friendly responses. It formats data with appropriate units (converting meters to kilometers, formatting pace correctly), and presents information in an engaging, motivational way.</p>
-<h3 id="shared-memory">Shared Memory</h3>
+<h3 id="4-shared-memory">4. Shared Memory</h3>
 <p>One of the most powerful features is the shared memory implementation. All agents access the same conversation context, enabling follow-up questions like "How does that compare to last year?" without repeating context.</p>
-<h3 id="structured-outputs">Structured Outputs</h3>
+<h3 id="5-structured-outputs">5. Structured Outputs</h3>
 <p>Thanks to Atomic Agents' integration with <a href="https://github.com/jxnl/instructor">Instructor</a>, the entire system works with strongly typed outputs. This dramatically reduces hallucinations and ensures data consistency across the pipeline.</p>
-<h3 id="the-development-experience">The Development Experience</h3>
+<h3 id="6-the-development-experience">6. The Development Experience</h3>
 <p>What impressed me most about building with Atomic Agents was how quickly I could go from concept to working prototype. The framework strikes an excellent balance between:</p>
 <ul>
 <li>Production-ready features (robust error handling, performance optimization)</li>
@@ -572,28 +639,6 @@
 <li>Flexibility (easy to customize and extend)</li>
 </ul>
 <p>I completed the initial version in a single weekend, something that would have taken weeks with many other frameworks.</p>
-<h2 id="the-code">The Code</h2>
-<p>The project structure is clean and modular, with separate files for each agent and utility functions. Each agent has clear responsibilities, making the codebase maintainable and extensible.</p>
-<p>The orchestrator ties everything together with a simple pipeline:</p>
-<pre><code class="language-python">def process_strava_query(classify_agent, sql_agent, response_agent, user_query):
-    # Step 1: Classify the query
-    classification = classify_query(classify_agent, user_query)
-
-    if classification.classification != &quot;sql_appropriate&quot;:
-        # Handle non-SQL queries appropriately
-        return generate_non_sql_response(...)
-
-    # Step 2: Convert to SQL with conversation context
-    sql_query = convert_to_sql(sql_agent, user_query)
-
-    # Step 3: Execute SQL against local SQLite database
-    execution_result = run_query(sql_query)
-
-    # Step 4: Generate human-friendly response
-    response = generate_response(response_agent, user_query, execution_result)
-
-    return response
-</code></pre>
 
 
 
